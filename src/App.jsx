@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import LandingPage from './components/LandingPage';
 import OrdersPage from './components/OrdersPage';
 import InventoryManagement from './components/InventoryManagement';
+import CheckoutPage from './components/CheckoutPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/home" element={<LandingPage />} />
           <Route path="/orders" element={<OrdersPage />} />
           <Route path="/inventory" element={<InventoryManagement />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </Layout>
     </Router>

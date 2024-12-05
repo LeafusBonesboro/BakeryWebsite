@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const OrdersPage = () => {
   // State for the cart
@@ -24,6 +25,15 @@ const OrdersPage = () => {
 
   // Calculate total price
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+  // React Router's navigation hook
+  const navigate = useNavigate();
+
+  // Navigate to checkout page
+  const handleCheckout = () => {
+    console.log('Navigating to Checkout with:', { cart, totalPrice });
+    navigate('/checkout', { state: { cart, totalPrice } });
+  };
 
   return (
     <div className="bg-[#faf5f0] min-h-screen flex flex-col">
@@ -80,7 +90,10 @@ const OrdersPage = () => {
             Total: <span className="text-blue-500">${totalPrice.toFixed(2)}</span>
           </h3>
           {cart.length > 0 && (
-            <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+            <button
+              onClick={handleCheckout}
+              className="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
               Checkout
             </button>
           )}
