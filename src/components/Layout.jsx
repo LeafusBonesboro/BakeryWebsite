@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-white text-xl font-bold">Dolce Sostegno</h1>
           <nav className="flex space-x-6">
-            <Link to="/" className="text-white hover:underline">
+            <Link to="/home" className="text-white hover:underline">
               Home
             </Link>
             <Link to="/orders" className="text-white hover:underline">
